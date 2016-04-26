@@ -64,6 +64,8 @@
             <url>https://mymavenrepo.com/repo/aGiGVAMZQpBLIVYzWAEa/</url>
 			<username>myMavenRepo</username>
 			<password>testingbitrise</password>
+			<username>myMavenRepo</username>
+			<password>testingbitrise</password>
         </repository>
     </repositories>
 	
@@ -72,6 +74,8 @@
         <repository>
             <id>privateWrite</id>
             <url>https://mymavenrepo.com/repo/1eIC8pl42FSWeS1gP5BQ/</url>
+			<username>myMavenRepo</username>
+			<password>testingbitrise</password>
 			<username>myMavenRepo</username>
 			<password>testingbitrise</password>
         </repository>
