@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <servers>
+    <server>
+      <id>releases</id>
+      <username>username</username>
+      <password>password</password>
+    </server>
+    <server>
+      <id>snapshots</id>
+      <username>ryan.nair</username>
+      <password>Birdy911!</password>
+    </server>
+	
+	<!--
+	delete the next two myMavenRepo servers when done with the bitrise test
+	-->
+	
+	<server>
+        <id>privateRead</id>
+        <username>myMavenRepo</username>
+        <password>testingbitrise</password>
+    </server>
+    <server>
+        <id>privateWrite</id>
+        <username>myMavenRepo</username>
+        <password>testingbitrise</password>
+    </server>
+	
+	
+  </servers>
+  <profiles>
+    <profile>
+      <id>development</id>
+      <properties>
+        <maven.clover.licenseLocation>
+        ${env.HOME}/clover/clover.license</maven.clover.licenseLocation>
+      </properties>
+	  
+	  
+      <repositories>
+	  
+	  
+        <repository>
+          <id>releases</id>
+          <url>http://releases</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+		
+        <repository>
+          <id>snapshots</id>
+          <url>http://snapshots</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+		
+		
+		
+		<repository>
+          <id>privateRead</id>
+          <url>https://privateRead</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+		
+      </repositories>
+      <pluginRepositories>
+              <pluginRepository>
+                    <id>nexus</id>
+                    <name>nexus</name>
+                    <layout>default</layout>
+                    <snapshots>
+                          <enabled>true</enabled>
+                          <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                    <releases>
+                          <enabled>true</enabled>
+                    </releases>
+                    <url>http://nexus.standardbank.co.za:8090/nexus/content/groups/public</url>
+              </pluginRepository>
+			  
+			  
+			  
+			  <!--
+			  this next part must also be deleted
+			  -->
+			  <pluginRepository>
+                    <id>privateRead</id>
+                    <name>private1</name>
+                    <layout>default</layout>
+                    <snapshots>
+                          <enabled>true</enabled>
+                          <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                    <releases>
+                          <enabled>true</enabled>
+                    </releases>
+                    <url>https://mymavenrepo.com/repo/aGiGVAMZQpBLIVYzWAEa/</url>
+              </pluginRepository>
+			  
+		
+         </pluginRepositories>
+		 
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>development</activeProfile>
+  </activeProfiles>
+  <mirrors>
+    <mirror>
+      <!-- This is used to direct the public snapshots repo in the profile below over to a different nexus group -->
+      <id>sbsa-snapshots</id>
+      <mirrorOf>snapshots</mirrorOf>
+      <url>
+      http://nexus.standardbank.co.za:8090/nexus/content/repositories/snapshots</url>
+    </mirror>
+    <mirror>
+      <id>sbsa-releases</id>
+      <mirrorOf>releases</mirrorOf>
+      <url>
+      http://nexus.standardbank.co.za:8090/nexus/content/repositories/releases</url>
+    </mirror>
+	
+	
+	
+	<!--
+	remove the part after this if things are breaking. remove up till the next nexus id
+	-->
+	
+	<mirror>
+      <id>com.privateMavenRepo</id>
+      <mirrorOf>privateRead</mirrorOf>
+      <url>
+	  https://mymavenrepo.com/repo/aGiGVAMZQpBLIVYzWAEa/
+	  </url>
+    </mirror>
+	
+	
+    <mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>
+      http://nexus.standardbank.co.za:8090/nexus/content/groups/public/</url>
+    </mirror>
+	
+  </mirrors>
+  
+	
+</settings>
+
+
+
+
+
+
+
+
+
