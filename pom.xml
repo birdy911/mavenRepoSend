@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>test3.grad.testingJar</groupId>
+    <artifactId>testingJar</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>grad test - TLP</name>
+
+
+    <build>
+        <pluginManagement>
+		 <plugins>
+            <plugin>
+                <groupId>com.simpligility.maven.plugins</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+				<version>4.4.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <sdk>
+                        <platform>21</platform>
+                    </sdk>
+                </configuration>
+            </plugin>
+			
+        </plugins>
+        </pluginManagement>
+		
+        <plugins>
+            <plugin>
+                <groupId>com.simpligility.maven.plugins</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+            </plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		
+			<plugin>
+				<groupId>test2.grad.testingJar.testingJar.1.0.0-SNAPSHOT</groupId>
+				<artifactId>testingJar</artifactId>
+				<version>1.1</version>
+			</plugin>
+			
+			
+        </plugins>
+		
+      </build> 
+	  
+	  
+	<repositories>
+        <repository>
+            <id>privateRead</id>
+            <url>https://mymavenrepo.com/repo/aGiGVAMZQpBLIVYzWAEa/</url>
+        </repository>
+    </repositories>
+	
+	
+	<distributionManagement>
+        <repository>
+            <id>privateWrite</id>
+            <url>https://mymavenrepo.com/repo/1eIC8pl42FSWeS1gP5BQ/</url>
+        </repository>
+    </distributionManagement>
+	
+	
+	<dependencyManagement>
+		<dependencies>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android</artifactId>
+                <version>4.1.1.4</version>
+                <scope>provided</scope>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+
+</project>
