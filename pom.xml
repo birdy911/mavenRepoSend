@@ -8,21 +8,6 @@
     <packaging>pom</packaging>
     <name>grad test - TLP</name>
 
-	
-	
-		<servers>
-			<server>
-				<id>privateRead</id>
-				<username>myMavenRepo</username>
-				<password>testingbitrise</password>
-			</server>
-			<server>
-				<id>privateWrite</id>
-				<username>myMavenRepo</username>
-				<password>testingbitrise</password>
-			</server>
-		</servers>
-	
 
     <build>
         <pluginManagement>
